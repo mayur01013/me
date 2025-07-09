@@ -5,285 +5,229 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sales Mentor Portfolio</title>
   <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    background-color: #1e1e1e;
-    background-image: 
-      linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 30px 30px;
-    color: #ddd;
-  }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #1e1e1e;
+      background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 30px 30px;
+      color: #ddd;
+    }
 
-  header {
-    background: linear-gradient(to right, #004e92, #000428);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-  }
+    header {
+      background: linear-gradient(to right, #004e92, #000428);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-  header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-  }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
 
-  header p {
-    font-size: 1.2em;
-    opacity: 0.9;
-  }
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
 
-  .cta-btn {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 12px 24px;
-    background: #ff6b6b;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background 0.3s;
-  }
+    .cta-btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 12px 24px;
+      background: #ff6b6b;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s;
+    }
 
-  .cta-btn:hover {
-    background: #ff3b3b;
-  }
+    .cta-btn:hover {
+      background: #ff3b3b;
+    }
 
-  section {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: auto;
-  }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-  .about,
-.services,
-.contact {
-  margin-bottom: 60px;
-}
+    .about, .services, .contact { margin-bottom: 60px; }
+    .youtube { margin-bottom: 20px; margin-top: -20px; }
 
-.youtube {
-  margin-bottom: 20px;
-  margin-top: -20px;
-}
+    .about img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin: 20px auto;
+      display: block;
+    }
 
+    .services ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      list-style: none;
+      margin-top: 20px;
+    }
 
-  .about img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    margin: 20px auto;
-    display: block;
-  }
+    .services li {
+      background: #ffffff10;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+      color: #fff;
+    }
 
-  .services ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    list-style: none;
-    margin-top: 20px;
-  }
+    .services li:hover, .results ul li:hover {
+      transform: translateY(-5px);
+    }
 
-  .services li {
-    background: #ffffff10;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-    color: #fff;
-  }
+    .youtube iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 10px;
+    }
 
-  .services li:hover {
-    transform: translateY(-5px);
-  }
+    .contact {
+      text-align: center;
+    }
 
-  .youtube iframe {
-    width: 100%;
-    height: 315px;
-    border: none;
-    border-radius: 10px;
-  }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
 
-  .contact {
-    text-align: center;
-  }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
-  }
+    .results {
+      background: #2a2a2a;
+      padding: 60px 20px;
+      border-radius: 10px;
+      color: #eee;
+      max-width: 1100px;
+      margin: auto;
+      margin-bottom: 60px;
+    }
 
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  
-  .results {
-  background: #2a2a2a;
-  padding: 60px 20px;
-  border-radius: 10px;
-  color: #eee;
-  max-width: 1100px;
-  margin: auto;
-  margin-bottom: 60px;
-}
+    .results h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #00ff88;
+    }
 
-.results h2 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  color: #00ff88;
-}
+    .results ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
 
-.results ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 30px;
-}
+    .results ul li {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+      line-height: 1.6;
+      background: #ffffff10;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
 
-.results ul li {
-  margin-bottom: 15px;
-  font-size: 1.1em;
-  line-height: 1.6;
-  background: #ffffff10;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-}
+    .results p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #ccc;
+    }
 
-.results ul li:hover {
-  transform: translateY(-5px);
-}
+    .popup-form {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
 
+    .form-box {
+      background: #2a2a2a;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 90%;
+      color: #fff;
+    }
 
-.results p {
-  font-size: 1.1em;
-  line-height: 1.8;
-  color: #ccc;
-}
+    .form-box input, .form-box button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
 
-  
+    .form-box button {
+      background: #00ff88;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-  @media (max-width: 600px) {
-    header h1 { font-size: 2em; }
-  }
-  
-  
-  .popup-form {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
+    .close-btn {
+      background: #555;
+    }
 
-.form-box {
-  background: #2a2a2a;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 400px;
-  width: 90%;
-  color: #fff;
-}
-
-.form-box h2 {
-  margin-bottom: 20px;
-  color: #00ff88;
-  text-align: center;
-}
-
-.form-box input {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.form-box button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-  background: #00ff88;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close-btn {
-  background: #555;
-  margin-top: 10px;
-}
-
-  
-  
-  
-</style>
-
+    @media (max-width: 600px) {
+      header h1 { font-size: 2em; }
+    }
+  </style>
 </head>
 <body>
-
   <header>
-    <h1 class="fade-in">Murly Sharma</h1>
+    <h1 class="fade-in">Gaurav Chavan</h1>
     <p class="fade-in" style="transition-delay: 0.2s;">Sales Mentor | Growth Strategist | Revenue Booster</p>
-    <a href="https://example.com" class="cta-btn fade-in" style="transition-delay: 0.4s;">Book a Call</a>
+    <a href="#" class="cta-btn" onclick="openPopup()">Book a Call</a>
   </header>
 
   <section class="about fade-in">
     <h2>About Me</h2>
-    <p>I help individuals and businesses master the art of selling with proven systems and real-world strategies. With 5+ years in sales coaching, my methods have helped 500+ clients scale their revenue and build confidence.</p>
-<img src="https://drive.google.com/thumbnail?id=1RvOGJtAK6cjavnl00yiLUE0sbw61atzH&sz=w800" alt="Sales Mentor">
-
+    <p>I help individuals and businesses master the art of selling...</p>
+    <img src="https://drive.google.com/thumbnail?id=1RvOGJtAK6cjavnl00yiLUE0sbw61atzH&sz=w800" alt="Sales Mentor">
   </section>
 
   <section class="services fade-in">
-  <h2>My Services</h2>
-  <ul>
-    <li>
-      <strong>1-on-1 Mentorship</strong><br />
-      Tailored coaching to boost your closing rate & confidence.
-    </li>
-    <li>
-      <strong>Sales Funnels</strong><br />
-      Custom strategies to turn leads into high-paying customers.
-    </li>
-    <li>
-      <strong>Workshops</strong><br />
-      Interactive group training for companies or individuals.
-    </li>
-    <li>
-      <strong>500+ People Mentored</strong><br />
-      Real humans transformed through practical strategies & mindset shifts.
-    </li>
-  </ul>
-</section>
+    <h2>My Services</h2>
+    <ul>
+      <li><strong>1-on-1 Mentorship</strong><br />Tailored coaching to boost your closing rate & confidence.</li>
+      <li><strong>Sales Funnels</strong><br />Custom strategies to turn leads into high-paying customers.</li>
+      <li><strong>Workshops</strong><br />Interactive group training for companies or individuals.</li>
+      <li><strong>500+ People Mentored</strong><br />Real humans transformed through practical strategies.</li>
+    </ul>
+  </section>
 
-
-<section class="results fade-in">
-  <h2>My Real Results</h2>
-  <ul>
-    <li>📈 Helped an EdTech brand generate <strong>₹6.5 Crores</strong> in just 3 months</li>
-    <li>✈️ Scaled my <strong>travel agency’s revenue 3X</strong> in just 90 days</li>
-    <li>👥 Guided <strong>500+ people</strong> from ₹0 to ₹20–25K/month using ethical sales systems</li>
-    <li>🤝 Worked with coaches, freelancers & agency owners to close <strong>₹50K+</strong> clients</li>
-  </ul>
-
-  <h2>🎯 My Mission</h2>
-  <p>
-    To empower underdogs, students & aspiring closers to build confidence and consistent income<br>
-    using the power of ethical sales — so they can live with financial freedom, self-respect, and purpose.
-  </p>
-</section>
-
-
+  <section class="results fade-in">
+    <h2>My Real Results</h2>
+    <ul>
+      <li>📈 Helped EdTech brand generate <strong>₹6.5 Cr</strong> in 3 months</li>
+      <li>✈️ Scaled travel agency’s revenue 3X in 90 days</li>
+      <li>👥 Guided 500+ people from ₹0 to ₹20–25K/month</li>
+      <li>🤝 Helped coaches & freelancers close ₹50K+ clients</li>
+    </ul>
+    <h2>🎯 My Mission</h2>
+    <p>To empower underdogs, students & aspiring closers to build confidence...</p>
+  </section>
 
   <section class="youtube fade-in">
     <h2>Watch My Free Sales Training</h2>
@@ -296,6 +240,23 @@
     <a href="#" class="cta-btn" onclick="openPopup()">Book a Call</a>
   </section>
 
+  <div id="popupForm" class="popup-form">
+    <div class="form-box">
+      <h2>Book a Call</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="state" placeholder="State" required>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <button type="submit">Submit</button>
+        <button type="button" class="close-btn" onclick="closePopup()">Close</button>
+        <div id="successMessage" style="display:none; color:#0f0; margin-top:15px; text-align:center;">✅ Submitted successfully!</div>
+      </form>
+    </div>
+  </div>
+
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -306,37 +267,36 @@
     }, { threshold: 0.2 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    function openPopup() {
+      document.getElementById("popupForm").style.display = "flex";
+      document.getElementById("successMessage").style.display = "none";
+    }
+
+    function closePopup() {
+      document.getElementById("popupForm").style.display = "none";
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+
+      fetch("https://formsubmit.co/ajax/mayur8282cscs@gmail.com", {
+        method: "POST",
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          document.getElementById("successMessage").style.display = "block";
+        } else {
+          alert("Submission failed. Please try again.");
+        }
+      })
+      .catch(error => alert("Error: " + error));
+    });
   </script>
-  
-  
-  
-  <script>
-  function openPopup() {
-    document.getElementById("popupForm").style.display = "flex";
-  }
-  function closePopup() {
-    document.getElementById("popupForm").style.display = "none";
-  }
-</script>
-
-
-
-
-<div id="popupForm" class="popup-form">
-  <div class="form-box">
-    <h2>Book a Call</h2>
-    <form action="https://formsubmit.co/mayur8282cscs@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="state" placeholder="State" required>
-      <button type="submit">Submit</button>
-      <button type="button" class="close-btn" onclick="closePopup()">Close</button>
-    </form>
-  </div>
-</div>
-
-
-
 </body>
 </html>
