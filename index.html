@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sales Mentor Portfolio</title>
-  <a href="#" class="cta-btn" onclick="openPopup()">Book a Call</a>
   <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -170,124 +169,13 @@
   @media (max-width: 600px) {
     header h1 { font-size: 2em; }
   }
-  
-  
-  .popup-form {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.form-box {
-  background: #2a2a2a;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 400px;
-  width: 90%;
-  color: #fff;
-}
-
-.form-box h2 {
-  margin-bottom: 20px;
-  color: #00ff88;
-  text-align: center;
-}
-
-.form-box input {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.form-box button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-  background: #00ff88;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close-btn {
-  background: #555;
-  margin-top: 10px;
-}
-
-  
-  
-  
-  .popup-form {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.form-box {
-  background: #2a2a2a;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 400px;
-  width: 90%;
-  color: #fff;
-}
-
-.form-box h2 {
-  margin-bottom: 20px;
-  color: #00ff88;
-  text-align: center;
-}
-
-.form-box input {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.form-box button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-  background: #00ff88;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close-btn {
-  background: #555;
-  margin-top: 10px;
-}
-
-  
-  
 </style>
 
 </head>
 <body>
 
   <header>
-    <h1 class="fade-in">Gaurav Chavan</h1>
+    <h1 class="fade-in">Murly Sharma</h1>
     <p class="fade-in" style="transition-delay: 0.2s;">Sales Mentor | Growth Strategist | Revenue Booster</p>
     <a href="https://example.com" class="cta-btn fade-in" style="transition-delay: 0.4s;">Book a Call</a>
   </header>
@@ -348,7 +236,7 @@
   <section class="contact fade-in">
     <h2>Let’s Connect</h2>
     <p>Have questions or need a strategy session?</p>
-    <a href="#" class="cta-btn" onclick="openPopup()">Book a Call</a>
+    <a href="https://example.com" class="cta-btn">Book a Call</a>
   </section>
 
   <script>
@@ -362,106 +250,6 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
-  
-  
-  
-  <script>
-  function openPopup() {
-    document.getElementById("popupForm").style.display = "flex";
-  }
-  function closePopup() {
-    document.getElementById("popupForm").style.display = "none";
-  }
-</script>
-
-
-<script>
-  function openPopup() {
-    document.getElementById("popupForm").style.display = "flex";
-    document.getElementById("successMessage").style.display = "none";
-  }
-
-  function closePopup() {
-    document.getElementById("popupForm").style.display = "none";
-  }
-
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-    fetch("https://formsubmit.co/ajax/mayur8282cscs@gmail.com", {
-      method: "POST",
-      headers: {
-        'Accept': 'application/json'
-      },
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-        form.reset();
-        document.getElementById("successMessage").style.display = "block";
-      } else {
-        alert("Submission failed. Please try again.");
-      }
-    })
-    .catch(error => {
-      alert("Error: " + error);
-    });
-  });
-</script>
-
-
-
-    .then(response => {
-      if (response.ok) {
-        form.reset(); // Clear form
-        document.getElementById("successMessage").style.display = "block";
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    })
-    .catch(error => alert("Error: " + error));
-  });
-</script>
-
-<input type="hidden" name="_template" value="table">
-
-<div id="popupForm" class="popup-form">
-  <div class="form-box">
-    <h2>Book a Call</h2>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="state" placeholder="State" required>
-
-      <!-- Required hidden inputs -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-
-      <button type="submit">Submit</button>
-      <button type="button" class="close-btn" onclick="closePopup()">Close</button>
-
-      <div id="successMessage" style="display:none; color:#0f0; margin-top:15px; text-align:center;">
-        ✅ Submitted successfully!
-      </div>
-    </form>
-  </div>
-</div>
-
-
-
-  </div>
-</div>
-
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-
-
-
-
 
 </body>
 </html>
