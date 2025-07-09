@@ -169,15 +169,72 @@
   @media (max-width: 600px) {
     header h1 { font-size: 2em; }
   }
+  
+  
+  .popup-form {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.form-box {
+  background: #2a2a2a;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  color: #fff;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+  color: #00ff88;
+  text-align: center;
+}
+
+.form-box input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #00ff88;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn {
+  background: #555;
+  margin-top: 10px;
+}
+
+  
+  
+  
 </style>
 
 </head>
 <body>
 
   <header>
-    <h1 class="fade-in">Sharma</h1>
+    <h1 class="fade-in">Murly Sharma</h1>
     <p class="fade-in" style="transition-delay: 0.2s;">Sales Mentor | Growth Strategist | Revenue Booster</p>
-    <a href="#" class="cta-btn" onclick="openPopup()">Book a Call</a>
+    <a href="https://example.com" class="cta-btn fade-in" style="transition-delay: 0.4s;">Book a Call</a>
   </header>
 
   <section class="about fade-in">
@@ -252,6 +309,7 @@
   </script>
   
   
+  
   <script>
   function openPopup() {
     document.getElementById("popupForm").style.display = "flex";
@@ -261,10 +319,13 @@
   }
 </script>
 
+
+
+
 <div id="popupForm" class="popup-form">
   <div class="form-box">
     <h2>Book a Call</h2>
-    <form action="https://formsubmit.co/YOUR@EMAIL.COM" method="POST">
+    <form action="https://formsubmit.co/mayur8282cscs@gmail.com" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -275,7 +336,7 @@
   </div>
 </div>
 
-  
+
 
 </body>
 </html>
