@@ -175,9 +175,9 @@
 <body>
 
   <header>
-    <h1 class="fade-in">Murly Sharma</h1>
+    <h1 class="fade-in">Sharma</h1>
     <p class="fade-in" style="transition-delay: 0.2s;">Sales Mentor | Growth Strategist | Revenue Booster</p>
-    <a href="https://example.com" class="cta-btn fade-in" style="transition-delay: 0.4s;">Book a Call</a>
+    <a href="#" class="cta-btn" onclick="openPopup()">Book a Call</a>
   </header>
 
   <section class="about fade-in">
@@ -236,7 +236,7 @@
   <section class="contact fade-in">
     <h2>Let’s Connect</h2>
     <p>Have questions or need a strategy session?</p>
-    <a href="https://example.com" class="cta-btn">Book a Call</a>
+    <a href="#" class="cta-btn" onclick="openPopup()">Book a Call</a>
   </section>
 
   <script>
@@ -250,6 +250,32 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
+  
+  
+  <script>
+  function openPopup() {
+    document.getElementById("popupForm").style.display = "flex";
+  }
+  function closePopup() {
+    document.getElementById("popupForm").style.display = "none";
+  }
+</script>
+
+<div id="popupForm" class="popup-form">
+  <div class="form-box">
+    <h2>Book a Call</h2>
+    <form action="https://formsubmit.co/YOUR@EMAIL.COM" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="state" placeholder="State" required>
+      <button type="submit">Submit</button>
+      <button type="button" class="close-btn" onclick="closePopup()">Close</button>
+    </form>
+  </div>
+</div>
+
+  
 
 </body>
 </html>
