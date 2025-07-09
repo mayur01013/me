@@ -320,21 +320,57 @@
 </script>
 
 
+<script>
+  function openPopup() {
+    document.getElementById("popupForm").style.display = "flex";
+    document.getElementById("successMessage").style.display = "none";
+  }
 
+  function closePopup() {
+    document.getElementById("popupForm").style.display = "none";
+  }
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default redirect
+    const form = e.target;
+
+    fetch("https://formsubmit.co/mayur8282cscs@gmail.com", {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset(); // Clear form
+        document.getElementById("successMessage").style.display = "block";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    })
+    .catch(error => alert("Error: " + error));
+  });
+</script>
+
+<input type="hidden" name="_template" value="table">
 
 <div id="popupForm" class="popup-form">
   <div class="form-box">
     <h2>Book a Call</h2>
-    <form action="https://formsubmit.co/mayur8282cscs@gmail.com" method="POST">
+    <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
       <input type="email" name="email" placeholder="Email" required>
       <input type="text" name="state" placeholder="State" required>
       <button type="submit">Submit</button>
       <button type="button" class="close-btn" onclick="closePopup()">Close</button>
+
+      <!-- ✅ Add this success message DIV right here: -->
+      <div id="successMessage" style="display:none; color:#0f0; margin-top:15px; text-align:center;">
+        ✅ Submitted successfully!
+      </div>
     </form>
   </div>
 </div>
+
 
 
 
