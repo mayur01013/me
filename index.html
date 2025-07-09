@@ -331,25 +331,11 @@
   }
 
   document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Prevent default redirect
-    const form = e.target;
-
-    <script>
-  function openPopup() {
-    document.getElementById("popupForm").style.display = "flex";
-    document.getElementById("successMessage").style.display = "none";
-  }
-
-  function closePopup() {
-    document.getElementById("popupForm").style.display = "none";
-  }
-
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("https://formsubmit.co/mayur8282cscs@gmail.com", {
+    fetch("https://formsubmit.co/ajax/mayur8282cscs@gmail.com", {
       method: "POST",
       headers: {
         'Accept': 'application/json'
@@ -368,6 +354,7 @@
   });
 </script>
 
+
     .then(response => {
       if (response.ok) {
         form.reset(); // Clear form
@@ -382,18 +369,16 @@
 
 <input type="hidden" name="_template" value="table">
 
-<div id="popupForm" class="popup-form">
-  <div class="form-box">
-    <h2>Book a Call</h2>
-    <form id="contactForm">
+<form id="contactForm">
   <input type="text" name="name" placeholder="Your Name" required>
   <input type="tel" name="phone" placeholder="Phone Number" required>
   <input type="email" name="email" placeholder="Email" required>
-  <input type="text" name="state" placeholder="State" required">
+  <input type="text" name="state" placeholder="State" required>
 
-  <!-- 🔐 Hidden inputs for FormSubmit -->
-  <input type="hidden" name="_template" value="table">
+  <!-- FormSubmit required hidden fields -->
   <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://mayur01013.github.io/me/#success">
 
   <button type="submit">Submit</button>
   <button type="button" class="close-btn" onclick="closePopup()">Close</button>
@@ -403,8 +388,13 @@
   </div>
 </form>
 
+
   </div>
 </div>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+
 
 
 
